@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2EDDDE9-C30B-48C4-8456-61DD5B13E65D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SCI</RootNamespace>
+    <AssemblyName>SCI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>packages\BouncyCastle.Cryptography.2.3.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.2.1.66\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.26.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.26.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.3.8\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.8.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.3.8\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.9.0.1\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.8.0.1\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=8.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.8.0.1\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.8.0.2\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=8.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Options.8.0.2\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.Primitives.8.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=9.2.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.9.2.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.2.0\lib\netstandard2.0\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.BarCodes, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.2.0\lib\netstandard2.0\PdfSharp.BarCodes.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.2.0\lib\netstandard2.0\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Cryptography, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.2.0\lib\netstandard2.0\PdfSharp.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Quality, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.2.0\lib\netstandard2.0\PdfSharp.Quality.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Shared, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.2.0\lib\netstandard2.0\PdfSharp.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Snippets, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.2.0\lib\netstandard2.0\PdfSharp.Snippets.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.System, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.2.0\lib\netstandard2.0\PdfSharp.System.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.WPFonts, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.2.0\lib\netstandard2.0\PdfSharp.WPFonts.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Configuration.ConfigurationManager.8.0.0\lib\net462\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=8.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Diagnostics.DiagnosticSource.8.0.1\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Pkcs, Version=8.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Security.Cryptography.Pkcs.8.0.1\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="ZstdSharp, Version=0.8.0.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
+      <HintPath>packages\ZstdSharp.Port.0.8.0\lib\net462\ZstdSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\EspecialidadDAO.cs" />
+    <Compile Include="DAO\HorarioDAO.cs" />
+    <Compile Include="DAO\UsuarioSistemaDAO.cs" />
+    <Compile Include="Models\Vistas\HorarioVista.cs" />
+    <Compile Include="Interfaces\IHorarioService.cs" />
+    <Compile Include="Interfaces\IEspecialidad.cs" />
+    <Compile Include="Interfaces\ITurnosDia.cs" />
+    <Compile Include="Interfaces\IUsuarioSistema.cs" />
+    <Compile Include="Interfaces\IVerPacientes.cs" />
+    <Compile Include="Interfaces\IVerProfesionales.cs" />
+    <Compile Include="Models\Entidades\Especialidad.cs" />
+    <Compile Include="Models\Entidades\Persona.cs" />
+    <Compile Include="Models\Entidades\Profesional.cs" />
+    <Compile Include="Models\Entidades\Usuario.cs" />
+    <Compile Include="Models\Vistas\ResumenTurnosDelDia.cs" />
+    <Compile Include="Presenters\EspecialidadPresenter.cs" />
+    <Compile Include="Presenters\TurrnosDiaPresenter.cs" />
+    <Compile Include="Presenters\UsuarioSistemaPresenter.cs" />
+    <Compile Include="Servicios\EspecialidadService.cs" />
+    <Compile Include="Servicios\UsuarioSistemaService.cs" />
+    <Compile Include="Utilidades\TipoPersona.cs" />
+    <Compile Include="Presenters\FormularioPersonaPresenter.cs" />
+    <Compile Include="Interfaces\IFormularioPersona.cs" />
+    <Compile Include="Servicios\PacienteService.cs" />
+    <Compile Include="Presenters\AgendarTurnoPresenter.cs" />
+    <Compile Include="DAO\BloqueoHorarioDAO.cs" />
+    <Compile Include="Models\Entidades\Horario.cs" />
+    <Compile Include="Vistas\UserControls\UCEditarHorario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCEditarHorario.Designer.cs">
+      <DependentUpon>UCEditarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presenters\VerPacientesPresenter.cs" />
+    <Compile Include="Presenters\VerProfesionalesPresenter.cs" />
+    <Compile Include="Vistas\Forms\AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Forms\AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Forms\FrmCambiarEstadoTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Forms\FrmCambiarEstadoTurno.Designer.cs">
+      <DependentUpon>FrmCambiarEstadoTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\ProfesionalService.cs" />
+    <Compile Include="Servicios\HorarioService.cs" />
+    <Compile Include="Interfaces\IAgendarTurno.cs" />
+    <Compile Include="Interfaces\IFormularioConCambios.cs" />
+    <Compile Include="DAO\PacienteDAO.cs" />
+    <Compile Include="DAO\ProfesionalDAO.cs" />
+    <Compile Include="Interfaces\IVerPagos.cs" />
+    <Compile Include="Interfaces\IRegistrarPago.cs" />
+    <Compile Include="Interfaces\IVerTurnos.cs" />
+    <Compile Include="Models\Entidades\Turno.cs" />
+    <Compile Include="DAO\TurnosDAO.cs" />
+    <Compile Include="Models\Entidades\Paciente.cs" />
+    <Compile Include="Models\Vistas\TurnoVista.cs" />
+    <Compile Include="Models\Entidades\Pago.cs" />
+    <Compile Include="DAO\PagoDAO.cs" />
+    <Compile Include="Servicios\PagoService.cs" />
+    <Compile Include="Models\Vistas\PagoVista.cs" />
+    <Compile Include="Presenters\RegistrarPagoPresenter.cs" />
+    <Compile Include="Servicios\TurnoService.cs" />
+    <Compile Include="Presenters\VerTurnosPresenter.cs" />
+    <Compile Include="Vistas\UserControls\UCEspecialidad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCEspecialidad.Designer.cs">
+      <DependentUpon>UCEspecialidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCRegistrarPago.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCRegistrarPago.Designer.cs">
+      <DependentUpon>UCRegistrarPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCTurnosDelDia.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCTurnosDelDia.Designer.cs">
+      <DependentUpon>UCTurnosDelDia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCUsuarioSistema.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCUsuarioSistema.Designer.cs">
+      <DependentUpon>UCUsuarioSistema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerPagos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerPagos.Designer.cs">
+      <DependentUpon>UCVerPagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerTurnos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerTurnos.Designer.cs">
+      <DependentUpon>UCVerTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCAgendarTurno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCAgendarTurno.Designer.cs">
+      <DependentUpon>UCAgendarTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCBloquearHorario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCBloquearHorario.Designer.cs">
+      <DependentUpon>UCBloquearHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCConfigrurarHorario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCConfigrurarHorario.Designer.cs">
+      <DependentUpon>UCConfigrurarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCFormularioPersona.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCFormularioPersona.Designer.cs">
+      <DependentUpon>UCFormularioPersona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conexion\Conexion.cs" />
+    <Compile Include="Vistas\Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Forms\MenuPrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Forms\MenuPrincipalForm.Designer.cs">
+      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\UserControls\UCCaja.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCCaja.Designer.cs">
+      <DependentUpon>UCCaja.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCPaciente.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCPaciente.Designer.cs">
+      <DependentUpon>UCPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCProfesionales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCProfesionales.Designer.cs">
+      <DependentUpon>UCProfesionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCTurnos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCTurnos.Designer.cs">
+      <DependentUpon>UCTurnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerHorarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerHorarios.Designer.cs">
+      <DependentUpon>UCVerHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerPacientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerPacientes.Designer.cs">
+      <DependentUpon>UCVerPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerProfesionales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Vistas\UserControls\UCVerProfesionales.Designer.cs">
+      <DependentUpon>UCVerProfesionales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilidades\Utilidades.cs" />
+    <Compile Include="Utilidades\Validaciones.cs" />
+    <Compile Include="Presenters\VerPagosPresenter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Vistas\UserControls\UCEditarHorario.resx">
+      <DependentUpon>UCEditarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Forms\AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Forms\FrmCambiarEstadoTurno.resx">
+      <DependentUpon>FrmCambiarEstadoTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCEspecialidad.resx">
+      <DependentUpon>UCEspecialidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCRegistrarPago.resx">
+      <DependentUpon>UCRegistrarPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCTurnosDelDia.resx">
+      <DependentUpon>UCTurnosDelDia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCUsuarioSistema.resx">
+      <DependentUpon>UCUsuarioSistema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCVerPagos.resx">
+      <DependentUpon>UCVerPagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCVerTurnos.resx">
+      <DependentUpon>UCVerTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCAgendarTurno.resx">
+      <DependentUpon>UCAgendarTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCBloquearHorario.resx">
+      <DependentUpon>UCBloquearHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCConfigrurarHorario.resx">
+      <DependentUpon>UCConfigrurarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCFormularioPersona.resx">
+      <DependentUpon>UCFormularioPersona.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Forms\MenuPrincipalForm.resx">
+      <DependentUpon>MenuPrincipalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCCaja.resx">
+      <DependentUpon>UCCaja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCPaciente.resx">
+      <DependentUpon>UCPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCProfesionales.resx">
+      <DependentUpon>UCProfesionales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCTurnos.resx">
+      <DependentUpon>UCTurnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCVerHorarios.resx">
+      <DependentUpon>UCVerHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCVerPacientes.resx">
+      <DependentUpon>UCVerPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\UserControls\UCVerProfesionales.resx">
+      <DependentUpon>UCVerProfesionales.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
