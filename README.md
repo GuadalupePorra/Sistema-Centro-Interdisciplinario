@@ -1,8 +1,8 @@
 # 🏥 Sistema de Gestión para Centro Interdisciplinario
+![C#](https://img.shields.io/badge/Language-C%23-blue) ![Windows Forms](https://img.shields.io/badge/Platform-Windows_Forms-green) ![MySQL](https://img.shields.io/badge/Database-MySQL-orange)
 
 ## 🚀 Descripción
-
-Aplicación de escritorio desarrollada en C#, diseñada para cubrir todas las operaciones de un centro interdisciplinario.
+Aplicación de escritorio en C# para gestionar pacientes, profesionales, turnos y pagos en un centro interdisciplinario. 
 
 - Navegación modular mediante UserControls embebidos en un formulario principal.
 - Gestión completa de pacientes, profesionales, turnos y pagos.
